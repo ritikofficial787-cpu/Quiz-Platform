@@ -1,0 +1,3786 @@
+/* ==========================================================================
+   QuizLearn - Student Portal Styles (Profile Setup & Dashboard)
+   Theme: Sleek Dark Navy & Black with Refined Purple Accents
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Onboarding / Student Profile Setup
+   -------------------------------------------------------------------------- */
+.ql-onboard-body {
+    background-color: #07090f;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.ql-onboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 48px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(7, 9, 15, 0.85);
+    backdrop-filter: blur(10px);
+}
+
+.ql-onboard-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.ql-onboard-logo-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.ql-onboard-logo-icon svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+}
+
+.ql-onboard-brand-text {
+    font-size: 20px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+}
+
+.ql-onboard-breadcrumb {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.ql-onboard-breadcrumb .tag-onboarding {
+    color: #a78bfa;
+}
+
+.ql-onboard-breadcrumb .divider {
+    color: #475569;
+    margin: 0 6px;
+}
+
+.ql-onboard-breadcrumb .tag-current {
+    color: #94a3b8;
+}
+
+/* Ambient glow */
+.ql-glow-top {
+    position: absolute;
+    top: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.18) 0%, rgba(7, 9, 15, 0) 70%);
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.ql-onboard-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px 60px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.ql-step-pill {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 9999px;
+    background: rgba(124, 58, 237, 0.16);
+    border: 1px solid rgba(139, 92, 246, 0.35);
+    color: #c084fc;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.ql-onboard-heading {
+    font-size: 34px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.03em;
+    margin: 0 0 8px 0;
+    text-align: center;
+}
+
+.ql-onboard-subheading {
+    font-size: 15px;
+    color: #94a3b8;
+    margin: 0 0 32px 0;
+    text-align: center;
+}
+
+.ql-onboard-card {
+    background: #0f121e;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 34px 38px;
+    width: 100%;
+    max-width: 660px;
+    box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.7);
+}
+
+.ql-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.ql-field-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.ql-field-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #e2e8f0;
+    margin-bottom: 8px;
+}
+
+.ql-select-wrapper {
+    position: relative;
+}
+
+.ql-field-select,
+.ql-field-input {
+    width: 100%;
+    height: 48px;
+    background: #141828;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 0 16px;
+    font-family: inherit;
+    transition: all 0.2s ease;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.ql-select-wrapper select {
+    appearance: none;
+    -webkit-appearance: none;
+    padding-right: 38px;
+    cursor: pointer;
+}
+
+.ql-select-arrow {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+}
+
+.ql-select-arrow svg {
+    width: 16px;
+    height: 16px;
+}
+
+.ql-field-select:focus,
+.ql-field-input:focus {
+    border-color: #8b5cf6;
+    background: #171c30;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.2);
+}
+
+.ql-field-input::placeholder {
+    color: #64748b;
+}
+
+.ql-subjects-section {
+    margin-top: 26px;
+}
+
+.ql-subjects-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 4px 0;
+}
+
+.ql-subjects-subtitle {
+    font-size: 13px;
+    color: #94a3b8;
+    margin: 0 0 16px 0;
+}
+
+.ql-chips-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 28px;
+}
+
+.ql-subject-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 16px;
+    border-radius: 9999px;
+    background: #151929;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #cbd5e1;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s ease;
+}
+
+.ql-subject-chip:hover {
+    border-color: rgba(139, 92, 246, 0.5);
+    color: #ffffff;
+    background: #1b2034;
+}
+
+.ql-subject-chip.selected {
+    background: #7c3aed;
+    border-color: #8b5cf6;
+    color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 3px 12px rgba(124, 58, 237, 0.35);
+}
+
+.ql-subject-chip .chip-check {
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.ql-subject-chip.selected .chip-check {
+    display: inline-flex;
+}
+
+.ql-btn-continue {
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+    border: 1px solid rgba(139, 92, 246, 0.4);
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.25s ease;
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.35);
+}
+
+.ql-btn-continue:hover {
+    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(124, 58, 237, 0.5);
+}
+
+.ql-btn-continue:active {
+    transform: translateY(0);
+}
+
+.ql-onboard-skip-wrap {
+    text-align: center;
+    margin-top: 16px;
+}
+
+.ql-onboard-skip {
+    color: #94a3b8;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.ql-onboard-skip:hover {
+    color: #c084fc;
+    text-decoration: underline;
+}
+
+.ql-validation-alert {
+    display: none;
+    padding: 12px 16px;
+    border-radius: 10px;
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.35);
+    color: #fca5a5;
+    font-size: 13px;
+    margin-bottom: 20px;
+    align-items: center;
+    gap: 10px;
+}
+
+.ql-validation-alert.visible {
+    display: flex;
+}
+
+/* --------------------------------------------------------------------------
+   Student Dashboard Layout
+   -------------------------------------------------------------------------- */
+.ql-dashboard-layout {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #080a13;
+    color: #ffffff;
+    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    position: relative;
+}
+
+.ql-dashboard-layout > form {
+    display: flex;
+    flex: 1 1 100%;
+    width: 100%;
+    min-height: 100vh;
+    min-width: 0;
+}
+
+/* Sidebar */
+.ql-sidebar {
+    width: 250px;
+    background: #0b0e19;
+    border-right: 1px solid rgba(255, 255, 255, 0.07);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    padding: 24px 16px;
+    transition: transform 0.3s ease;
+}
+
+.ql-sidebar-top {
+    display: flex;
+    flex-direction: column;
+}
+
+.ql-sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    padding: 4px 8px 24px 8px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ql-sidebar-brand-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.ql-sidebar-brand-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.ql-sidebar-brand-name {
+    font-size: 19px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+}
+
+.ql-sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.ql-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    color: #94a3b8;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.ql-nav-item svg {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    transition: all 0.2s ease;
+}
+
+.ql-nav-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+}
+
+.ql-nav-item.active {
+    background: rgba(124, 58, 237, 0.18);
+    color: #ffffff;
+    font-weight: 600;
+    border: 1px solid rgba(139, 92, 246, 0.25);
+}
+
+.ql-nav-item.active svg {
+    color: #a78bfa;
+}
+
+.ql-sidebar-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 16px;
+}
+
+/* Dashboard Main Content Area */
+.ql-dash-main,
+.ql-dashboard-main {
+    margin-left: 250px;
+    flex: 1 1 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #080a13;
+    width: calc(100% - 250px);
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+/* Top App Header */
+.ql-app-header,
+.ql-top-header {
+    height: 70px;
+    background: rgba(11, 14, 25, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    position: sticky;
+    top: 0;
+    z-index: 80;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.ql-header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.ql-mobile-menu-btn,
+.ql-mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 8px;
+}
+
+.ql-mobile-menu-btn svg {
+    width: 22px;
+    height: 22px;
+    stroke: currentColor;
+}
+
+.ql-search-box {
+    position: relative;
+    width: 360px;
+}
+
+.ql-search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748b;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+}
+
+.ql-search-icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+.ql-search-input {
+    width: 100%;
+    height: 40px;
+    background: #121626;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 9999px;
+    padding: 0 16px 0 42px;
+    color: #ffffff;
+    font-size: 13px;
+    font-family: inherit;
+    outline: none;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.ql-search-input:focus {
+    border-color: #8b5cf6;
+    background: #171c32;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.2);
+}
+
+.ql-search-input::placeholder {
+    color: #64748b;
+}
+
+.ql-header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.ql-notif-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: #121626;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.ql-notif-btn:hover {
+    color: #ffffff;
+    border-color: rgba(139, 92, 246, 0.4);
+    background: #192036;
+}
+
+.ql-notif-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+.ql-notif-dot {
+    position: absolute;
+    top: 9px;
+    right: 9px;
+    width: 7px;
+    height: 7px;
+    background-color: #8b5cf6;
+    border-radius: 50%;
+    border: 1px solid #121626;
+}
+
+.ql-user-pill {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    padding: 4px 6px 4px 12px;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.ql-user-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.ql-user-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(124, 58, 237, 0.4);
+}
+
+/* Dashboard Body Container */
+.ql-dash-body {
+    padding: 32px 40px 60px 40px;
+    width: 100%;
+    max-width: 1520px;
+    margin: 0;
+    box-sizing: border-box;
+    align-self: stretch !important;
+}
+
+.ql-welcome-banner {
+    margin-bottom: 28px;
+}
+
+.ql-welcome-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    margin: 0 0 6px 0;
+}
+
+.ql-welcome-subtitle {
+    font-size: 14px;
+    color: #94a3b8;
+    margin: 0;
+}
+
+/* Stats Row */
+.ql-stats-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 32px;
+}
+
+.ql-stat-card {
+    background: #0f121e;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 14px;
+    padding: 22px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.ql-stat-card:hover {
+    border-color: rgba(139, 92, 246, 0.3);
+    transform: translateY(-2px);
+    background: #131728;
+}
+
+.ql-stat-number {
+    font-size: 32px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 4px;
+}
+
+.ql-stat-label {
+    font-size: 13px;
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+.ql-stat-icon-wrap {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(124, 58, 237, 0.16);
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a78bfa;
+}
+
+.ql-stat-icon-wrap svg {
+    width: 22px;
+    height: 22px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+}
+
+/* Two-column Main Grid */
+.ql-content-grid {
+    display: grid;
+    grid-template-columns: 2.2fr 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+/* Recent Quizzes Section */
+.ql-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.ql-section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+}
+
+.ql-selected-tracks-bar {
+    background: #0f121e;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 12px 18px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.ql-tracks-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.ql-tracks-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.ql-mini-track-chip {
+    padding: 3px 10px;
+    border-radius: 9999px;
+    background: rgba(124, 58, 237, 0.14);
+    border: 1px solid rgba(139, 92, 246, 0.28);
+    color: #c084fc;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.ql-tracks-edit {
+    font-size: 12px;
+    color: #a78bfa;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.ql-tracks-edit:hover {
+    text-decoration: underline;
+}
+
+.ql-quizzes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.ql-quiz-card {
+    background: #0f121e;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 14px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 195px;
+    transition: all 0.2s ease;
+}
+
+.ql-quiz-card:hover {
+    border-color: rgba(139, 92, 246, 0.35);
+    transform: translateY(-2px);
+    background: #121626;
+}
+
+.ql-quiz-tag {
+    align-self: flex-start;
+    padding: 3px 10px;
+    border-radius: 9999px;
+    background: rgba(124, 58, 237, 0.14);
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    color: #c084fc;
+    font-size: 11px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.ql-quiz-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 16px 0;
+    line-height: 1.3;
+}
+
+.ql-progress-block {
+    margin-top: auto;
+}
+
+.ql-progress-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #94a3b8;
+    margin-bottom: 6px;
+}
+
+.ql-progress-track {
+    height: 6px;
+    background: #1a1e30;
+    border-radius: 9999px;
+    overflow: hidden;
+}
+
+.ql-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #7c3aed 0%, #a855f7 100%);
+    border-radius: 9999px;
+    transition: width 0.4s ease;
+}
+
+.ql-quiz-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ql-last-score {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+.ql-btn-quiz-action {
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ql-btn-continue-quiz {
+    background: #7c3aed;
+    color: #ffffff;
+}
+
+.ql-btn-continue-quiz:hover {
+    background: #6d28d9;
+    box-shadow: 0 2px 10px rgba(124, 58, 237, 0.4);
+}
+
+.ql-btn-retake-quiz {
+    background: rgba(124, 58, 237, 0.12);
+    border: 1px solid rgba(139, 92, 246, 0.35);
+    color: #c084fc;
+}
+
+.ql-btn-retake-quiz:hover {
+    background: rgba(124, 58, 237, 0.24);
+    color: #ffffff;
+}
+
+/* Right Column: Leaderboard & Quick Actions */
+.ql-side-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ql-panel-card {
+    background: #0f121e;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 14px;
+    padding: 22px;
+}
+
+.ql-panel-card-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 16px 0;
+}
+
+/* Leaderboard List */
+.ql-leaderboard-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.ql-leader-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    font-size: 13px;
+}
+
+.ql-leader-row:last-child {
+    border-bottom: none;
+}
+
+.ql-leader-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.ql-leader-rank {
+    font-weight: 700;
+    color: #64748b;
+    width: 14px;
+}
+
+.ql-leader-rank.top-1 {
+    color: #fbbf24;
+}
+
+.ql-leader-rank.top-2 {
+    color: #94a3b8;
+}
+
+.ql-leader-rank.top-3 {
+    color: #c084fc;
+}
+
+.ql-leader-name {
+    color: #e2e8f0;
+    font-weight: 500;
+}
+
+.ql-leader-row.is-current-user {
+    background: rgba(124, 58, 237, 0.08);
+    margin: 0 -10px;
+    padding: 10px 10px;
+    border-radius: 8px;
+    border-bottom: none;
+}
+
+.ql-leader-row.is-current-user .ql-leader-name {
+    color: #c084fc;
+    font-weight: 600;
+}
+
+.ql-leader-score {
+    font-weight: 700;
+    color: #94a3b8;
+}
+
+.ql-leader-row.is-current-user .ql-leader-score {
+    color: #ffffff;
+}
+
+/* Quick Actions */
+.ql-quick-actions-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ql-btn-quick-primary {
+    width: 100%;
+    height: 42px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+    border: 1px solid rgba(139, 92, 246, 0.4);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.3);
+}
+
+.ql-btn-quick-primary:hover {
+    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(124, 58, 237, 0.45);
+}
+
+.ql-btn-quick-secondary {
+    width: 100%;
+    height: 42px;
+    border-radius: 10px;
+    background: #141829;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #e2e8f0;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.ql-btn-quick-secondary:hover {
+    background: #1a2036;
+    border-color: rgba(139, 92, 246, 0.35);
+    color: #ffffff;
+}
+
+/* Modal Dialogs */
+.ql-modal-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(6px);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.ql-modal-backdrop.active {
+    display: flex;
+}
+
+.ql-modal-box {
+    background: #0f1220;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    padding: 28px;
+    width: 100%;
+    max-width: 520px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.85);
+    position: relative;
+    animation: qlModalFadeIn 0.2s ease-out;
+}
+
+@keyframes qlModalFadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.ql-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.ql-modal-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+}
+
+.ql-modal-close {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+}
+
+.ql-modal-close:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.ql-modal-body {
+    font-size: 14px;
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+/* Mobile Sidebar Drawer */
+@media (max-width: 992px) {
+    .ql-sidebar {
+        transform: translateX(-100%);
+    }
+
+    .ql-sidebar.open {
+        transform: translateX(0);
+        box-shadow: 10px 0 30px rgba(0, 0, 0, 0.7);
+    }
+
+    .ql-dash-main,
+    .ql-dashboard-main {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .ql-mobile-menu-btn,
+    .ql-mobile-toggle {
+        display: block;
+    }
+
+    .ql-content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ql-quizzes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ql-stats-row {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .ql-onboard-header {
+        padding: 16px 20px;
+    }
+
+    .ql-onboard-card {
+        padding: 24px 20px;
+    }
+
+    .ql-form-row {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .ql-quizzes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ql-stats-row {
+        grid-template-columns: 1fr;
+    }
+
+    .ql-app-header {
+        padding: 0 16px;
+    }
+
+    .ql-search-box {
+        width: 200px;
+    }
+
+    .ql-dash-body {
+        padding: 20px 16px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Explore Quizzes & Quiz Details Specific Styles
+   -------------------------------------------------------------------------- */
+.ql-explore-wrap {
+    max-width: 1040px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.ql-explore-header {
+    margin-bottom: 24px;
+}
+
+.ql-explore-title {
+    font-size: 26px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    margin: 0 0 6px 0;
+}
+
+.ql-explore-subtitle {
+    font-size: 14px;
+    color: #94a3b8;
+    margin: 0;
+}
+
+/* Wide Search Bar for Explore Page */
+.ql-explore-search-wrap {
+    position: relative;
+    width: 100%;
+    margin: 20px 0 16px 0;
+}
+
+.ql-explore-search-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748b;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+}
+
+.ql-explore-search-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.ql-explore-search-input {
+    width: 100%;
+    height: 46px;
+    background: #0f121e;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 0 16px 0 46px;
+    color: #ffffff;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.ql-explore-search-input:focus {
+    border-color: #7c3aed;
+    background: #131728;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.18);
+}
+
+.ql-explore-search-input::placeholder {
+    color: #64748b;
+}
+
+/* Subject Filter Chips */
+.ql-filter-chips-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.ql-filter-chip {
+    padding: 6px 14px;
+    border-radius: 9999px;
+    background: #101422;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #94a3b8;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.ql-filter-chip:hover {
+    color: #ffffff;
+    border-color: rgba(139, 92, 246, 0.35);
+    background: #141829;
+}
+
+.ql-filter-chip.active {
+    background: #7c3aed;
+    border-color: #8b5cf6;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Dropdown Filters (Difficulty & Sort) */
+.ql-dropdown-filters-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.ql-filter-select-wrap {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.ql-filter-select {
+    appearance: none;
+    -webkit-appearance: none;
+    background: #101422;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 9999px;
+    padding: 6px 30px 6px 14px;
+    color: #cbd5e1;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.ql-filter-select:focus,
+.ql-filter-select:hover {
+    border-color: rgba(139, 92, 246, 0.4);
+    color: #ffffff;
+}
+
+.ql-filter-select-arrow {
+    position: absolute;
+    right: 12px;
+    pointer-events: none;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+}
+
+.ql-filter-select-arrow svg {
+    width: 12px;
+    height: 12px;
+}
+
+/* Recommended Section Title */
+.ql-rec-section-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 16px 0;
+}
+
+/* 2-Column Quiz Cards Grid */
+.ql-explore-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.ql-explore-card {
+    background: #0f121e;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 14px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 180px;
+    transition: all 0.2s ease;
+}
+
+.ql-explore-card:hover {
+    border-color: rgba(139, 92, 246, 0.35);
+    background: #121524;
+    transform: translateY(-2px);
+}
+
+.ql-card-top {
+    display: flex;
+    flex-direction: column;
+}
+
+.ql-card-cat-badge {
+    align-self: flex-start;
+    padding: 2px 8px;
+    border-radius: 6px;
+    background: rgba(124, 58, 237, 0.16);
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    color: #c084fc;
+    font-size: 11px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.ql-card-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 8px 0;
+    line-height: 1.3;
+}
+
+.ql-card-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #94a3b8;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.ql-card-meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.ql-card-meta-item svg {
+    width: 14px;
+    height: 14px;
+    color: #64748b;
+}
+
+.ql-card-meta-dot {
+    color: #475569;
+}
+
+.ql-diff-easy {
+    color: #10b981;
+    font-weight: 600;
+}
+
+.ql-diff-medium {
+    color: #fbbf24;
+    font-weight: 600;
+}
+
+.ql-diff-hard {
+    color: #ef4444;
+    font-weight: 600;
+}
+
+.ql-card-desc {
+    font-size: 13px;
+    color: #94a3b8;
+    margin: 0 0 16px 0;
+    line-height: 1.5;
+}
+
+.ql-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ql-card-mastery-hint {
+    font-size: 12px;
+    color: #64748b;
+}
+
+.ql-btn-start-card {
+    padding: 7px 16px;
+    border-radius: 8px;
+    background: #7c3aed;
+    border: none;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+
+.ql-btn-start-card:hover {
+    background: #6d28d9;
+    color: #ffffff;
+}
+
+.ql-no-results-msg {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 48px 20px;
+    background: #0f121e;
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    color: #94a3b8;
+}
+
+/* --------------------------------------------------------------------------
+   Quiz Details Page Styles
+   -------------------------------------------------------------------------- */
+.ql-details-wrap {
+    max-width: 900px;
+}
+
+.ql-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #a78bfa;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-bottom: 20px;
+    transition: color 0.2s ease;
+}
+
+.ql-back-link:hover {
+    color: #c084fc;
+    text-decoration: underline;
+}
+
+.ql-details-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    margin: 0 0 6px 0;
+}
+
+.ql-details-subtitle {
+    font-size: 14px;
+    color: #94a3b8;
+    margin: 0 0 24px 0;
+}
+
+.ql-details-card {
+    background: #0f121e;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 28px;
+}
+
+.ql-details-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: #94a3b8;
+    margin: 12px 0;
+    flex-wrap: wrap;
+}
+
+.ql-details-desc {
+    font-size: 14px;
+    color: #cbd5e1;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.ql-details-section-heading {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 28px 0 12px 0;
+}
+
+.ql-topics-tags-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.ql-topic-tag {
+    padding: 6px 14px;
+    border-radius: 9999px;
+    background: #141829;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #cbd5e1;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.ql-instructions-list {
+    margin: 0 0 20px 0;
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ql-instructions-list li {
+    font-size: 13px;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ql-instructions-list li::before {
+    content: "•";
+    color: #64748b;
+    font-size: 16px;
+}
+
+.ql-warning-box {
+    background: rgba(245, 158, 11, 0.08);
+    border: 1px solid rgba(245, 158, 11, 0.28);
+    border-radius: 10px;
+    padding: 12px 16px;
+    color: #fbbf24;
+    font-size: 13px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.ql-warning-box svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.ql-details-actions-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 32px;
+    padding-top: 20px;
+}
+
+.ql-btn-start-details {
+    padding: 10px 24px;
+    border-radius: 10px;
+    background: #7c3aed;
+    border: none;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.ql-btn-start-details:hover {
+    background: #6d28d9;
+    color: #ffffff;
+}
+
+@media (max-width: 900px) {
+    .ql-explore-cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Actual Quiz Runner Styles (matching actual-quiz screenshots)
+   -------------------------------------------------------------------------- */
+.ql-quiz-top-bar {
+    height: 70px;
+    background: rgba(11, 14, 25, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 36px;
+    position: sticky;
+    top: 0;
+    z-index: 80;
+}
+
+.ql-exit-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #94a3b8;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.ql-exit-link:hover {
+    color: #ffffff;
+}
+
+.ql-quiz-top-center {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ql-quiz-top-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.ql-quiz-top-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.ql-btn-save-exit {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.ql-btn-save-exit:hover {
+    color: #ffffff;
+}
+
+.ql-runner-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.ql-runner-meta-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.ql-runner-q-indicator-top {
+    color: #c084fc;
+}
+
+.ql-runner-timer {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #cbd5e1;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    font-weight: 600;
+    background: #101422;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ql-runner-progress-track {
+    height: 4px;
+    background: #151928;
+    border-radius: 9999px;
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+
+.ql-runner-progress-fill {
+    height: 100%;
+    background: #7c3aed;
+    border-radius: 9999px;
+    transition: width 0.3s ease;
+}
+
+.ql-runner-card {
+    background: #0f121e;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 36px 38px;
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+}
+
+.ql-runner-step-tag {
+    font-size: 11px;
+    font-weight: 700;
+    color: #c084fc;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.ql-runner-q-text {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.5;
+    margin: 0 0 28px 0;
+}
+
+.ql-runner-options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ql-runner-option-btn {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 14px 18px;
+    border-radius: 12px;
+    background: #131728;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #cbd5e1;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s ease;
+    user-select: none;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.ql-runner-option-btn:hover {
+    border-color: rgba(139, 92, 246, 0.35);
+    background: #171d32;
+    color: #ffffff;
+}
+
+.ql-runner-option-btn.selected {
+    border-color: #7c3aed;
+    background: rgba(124, 58, 237, 0.14);
+    color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 0 0 1px #7c3aed;
+}
+
+.ql-opt-letter {
+    width: 26px;
+    height: 26px;
+    border-radius: 7px;
+    background: #1c2236;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: #94a3b8;
+    margin-right: 14px;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+
+.ql-runner-option-btn.selected .ql-opt-letter {
+    background: #7c3aed;
+    color: #ffffff;
+}
+
+.ql-opt-check-circle {
+    margin-left: auto;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #7c3aed;
+    display: none;
+}
+
+.ql-runner-option-btn.selected .ql-opt-check-circle {
+    display: block;
+}
+
+.ql-runner-footer-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 32px;
+    padding-top: 24px;
+}
+
+.ql-btn-runner-prev {
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: #131728;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #cbd5e1;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.ql-btn-runner-prev:hover:not(:disabled) {
+    background: #181e33;
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.ql-btn-runner-prev:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.ql-runner-q-counter-center {
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.ql-runner-right-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.ql-btn-runner-next {
+    padding: 10px 24px;
+    border-radius: 10px;
+    background: #7c3aed;
+    border: none;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ql-btn-runner-next:hover {
+    background: #6d28d9;
+    color: #ffffff;
+}
+
+.ql-runner-submit-subtext {
+    font-size: 11px;
+    color: #64748b;
+    margin-top: 6px;
+}
+
+/* --------------------------------------------------------------------------
+   Quiz Result Page Styles (matching actual-result screenshot)
+   -------------------------------------------------------------------------- */
+.ql-result-header {
+    margin-bottom: 24px;
+}
+
+.ql-result-badge-completed {
+    font-size: 11px;
+    font-weight: 800;
+    color: #c084fc;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.ql-result-heading {
+    font-size: 28px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    margin: 0 0 6px 0;
+}
+
+.ql-result-subheading {
+    font-size: 14px;
+    color: #94a3b8;
+    margin: 0;
+}
+
+.ql-result-layout-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.35fr;
+    gap: 24px;
+    max-width: 1100px;
+}
+
+/* Left Score Card */
+.ql-result-score-card {
+    background: #0f121e;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.ql-score-top-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #94a3b8;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+/* Circular Score Gauge */
+.ql-score-ring-wrap {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    margin-bottom: 20px;
+}
+
+.ql-score-svg {
+    transform: rotate(-90deg);
+}
+
+.ql-score-circle-bg {
+    fill: none;
+    stroke: #171d30;
+    stroke-width: 10;
+}
+
+.ql-score-circle-bar {
+    fill: none;
+    stroke: #7c3aed;
+    stroke-width: 10;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 1s ease-out;
+}
+
+.ql-score-ring-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ql-score-pct-text {
+    font-size: 34px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1;
+}
+
+.ql-score-fraction-text {
+    font-size: 13px;
+    color: #94a3b8;
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+.ql-score-eval-para {
+    font-size: 13px;
+    color: #cbd5e1;
+    line-height: 1.5;
+    margin: 0 0 24px 0;
+    padding: 0 10px;
+}
+
+.ql-score-breakdown-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding: 0 12px;
+    box-sizing: border-box;
+}
+
+.ql-score-breakdown-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+}
+
+.ql-score-item-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #94a3b8;
+}
+
+.ql-score-item-val {
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.ql-score-performance-row {
+    width: 100%;
+    padding: 0 12px;
+    box-sizing: border-box;
+}
+
+.ql-score-perf-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #94a3b8;
+    margin-bottom: 6px;
+}
+
+.ql-score-perf-track {
+    height: 4px;
+    background: #171d30;
+    border-radius: 9999px;
+    overflow: hidden;
+}
+
+.ql-score-perf-fill {
+    height: 100%;
+    background: #7c3aed;
+    border-radius: 9999px;
+}
+
+/* Right Column Cards */
+.ql-result-right-col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ql-perf-summary-card {
+    background: #0f121e;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 24px;
+}
+
+.ql-perf-summary-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: #94a3b8;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0 0 20px 0;
+}
+
+.ql-summary-metric-block {
+    margin-bottom: 18px;
+}
+
+.ql-metric-label-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #cbd5e1;
+    margin-bottom: 6px;
+}
+
+.ql-metric-track {
+    height: 4px;
+    background: #171d30;
+    border-radius: 9999px;
+    overflow: hidden;
+}
+
+.ql-metric-fill {
+    height: 100%;
+    background: #7c3aed;
+    border-radius: 9999px;
+}
+
+.ql-difficulty-summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: #cbd5e1;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ql-diff-badge-sm {
+    padding: 3px 10px;
+    border-radius: 6px;
+    background: rgba(245, 158, 11, 0.15);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    color: #fbbf24;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* 3 Mini Stat Boxes */
+.ql-mini-stat-boxes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.ql-mini-stat-box {
+    background: #0f121e;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 18px 16px;
+    text-align: center;
+}
+
+.ql-mini-stat-num {
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 6px;
+}
+
+.ql-mini-stat-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #94a3b8;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.ql-color-correct {
+    color: #10b981;
+}
+
+.ql-color-wrong {
+    color: #ef4444;
+}
+
+.ql-color-skipped {
+    color: #94a3b8;
+}
+
+/* Next Actions Card */
+.ql-next-actions-card {
+    background: #0f121e;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+}
+
+.ql-next-actions-title {
+    font-size: 14px;
+    color: #cbd5e1;
+    margin: 0 0 16px 0;
+    font-weight: 500;
+}
+
+.ql-next-actions-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ql-btn-review-answers {
+    width: 100%;
+    height: 44px;
+    border-radius: 10px;
+    background: #7c3aed;
+    border: none;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.ql-btn-review-answers:hover {
+    background: #6d28d9;
+}
+
+.ql-btn-try-again {
+    width: 100%;
+    height: 44px;
+    border-radius: 10px;
+    background: #141829;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #cbd5e1;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.ql-btn-try-again:hover {
+    background: #1a2034;
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Review Answers Expanded Panel */
+.ql-review-panel {
+    display: none;
+    margin-top: 32px;
+    max-width: 1100px;
+}
+
+.ql-review-panel.active {
+    display: block;
+}
+
+.ql-review-q-card {
+    background: #0f121e;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin-bottom: 14px;
+}
+
+.ql-review-q-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.ql-review-q-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 12px 0;
+}
+
+.ql-review-ans-row {
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+.ql-review-explanation {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+@media (max-width: 900px) {
+    .ql-result-layout-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ql-quiz-top-bar {
+        padding: 0 16px;
+    }
+
+    .ql-runner-card {
+        padding: 24px 20px;
+    }
+}
+
+/* ==========================================================================
+   Mistake Notebook Styles
+   ========================================================================== */
+.ql-mistakes-wrap {
+    max-width: 100%;
+    margin: 0;
+    width: 100%;
+}
+
+.ql-mistakes-overview-card {
+    background: #11131a;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 14px;
+    padding: 22px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.ql-mistakes-progress-info {
+    flex: 1;
+    max-width: 520px;
+}
+
+.ql-mistakes-progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.ql-mistakes-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #94a3b8;
+}
+
+.ql-mistakes-fraction {
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.ql-mistakes-track {
+    height: 7px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.ql-mistakes-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #7c3aed, #a855f7);
+    border-radius: 6px;
+    transition: width 0.4s ease;
+}
+
+.ql-btn-practice-mistakes {
+    background: #7c3aed;
+    color: #ffffff;
+    font-size: 13.5px;
+    font-weight: 600;
+    border-radius: 9px;
+    padding: 10px 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.ql-btn-practice-mistakes:hover {
+    background: #6d28d9;
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.4);
+    transform: translateY(-1px);
+    color: #ffffff;
+}
+
+.ql-mistakes-controls-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.ql-filter-pills-wrap {
+    display: flex;
+    gap: 10px;
+}
+
+.ql-filter-pill-btn {
+    background: #161922;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #94a3b8;
+    padding: 6px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.ql-filter-pill-btn:hover {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+.ql-filter-pill-btn.active {
+    background: #7c3aed;
+    color: #ffffff;
+    border-color: #7c3aed;
+    box-shadow: 0 2px 10px rgba(124, 58, 237, 0.35);
+}
+
+.ql-mistakes-search-box {
+    position: relative;
+    width: 260px;
+}
+
+.ql-mistakes-search-box svg {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748b;
+    width: 15px;
+    height: 15px;
+}
+
+.ql-mistakes-search-input {
+    width: 100%;
+    background: #11131a;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 8px 14px 8px 34px;
+    color: #ffffff;
+    font-size: 13px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.ql-mistakes-search-input:focus {
+    border-color: #7c3aed;
+}
+
+.ql-mistakes-section-title {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #94a3b8;
+    margin-bottom: 16px;
+}
+
+.ql-mistakes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.ql-mistake-card-item {
+    background: #11131a;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    padding: 20px 24px;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.ql-mistake-card-item:hover {
+    border-color: rgba(124, 58, 237, 0.4);
+    transform: translateY(-1px);
+}
+
+.ql-mistake-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #94a3b8;
+    margin-bottom: 10px;
+}
+
+.ql-mistake-badge-dot-inc {
+    color: #ef4444;
+}
+
+.ql-mistake-badge-dot-rev {
+    color: #10b981;
+}
+
+.ql-mistake-card-text {
+    font-size: 15px;
+    font-weight: 600;
+    color: #f1f5f9;
+    margin: 0 0 16px 0;
+    line-height: 1.45;
+}
+
+.ql-mistake-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.ql-mistake-answers-block {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 12.5px;
+}
+
+.ql-ans-sub-label {
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #64748b;
+    margin-right: 6px;
+}
+
+.ql-ans-val-wrong {
+    color: #ef4444;
+    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.ql-ans-val-correct {
+    color: #10b981;
+    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.ql-btn-review-link {
+    background: transparent;
+    border: none;
+    color: #a78bfa;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all 0.15s ease;
+}
+
+.ql-btn-review-link:hover {
+    color: #ffffff;
+    background: rgba(124, 58, 237, 0.15);
+}
+
+.ql-mistakes-quote-box {
+    text-align: center;
+    padding: 24px 0 16px 0;
+    font-size: 13px;
+    color: #64748b;
+    font-style: italic;
+}
+
+/* ==========================================================================
+   Admin Portal Styles (Dashboard, Add Quiz, Student Results, Manage Quizzes)
+   ========================================================================== */
+.ql-admin-brand-tag {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: rgba(124, 58, 237, 0.2);
+    color: #c084fc;
+    padding: 2px 7px;
+    border-radius: 4px;
+    margin-left: 6px;
+}
+
+.ql-admin-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.ql-admin-stat-card {
+    background: #11131a;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    padding: 20px 24px;
+}
+
+.ql-admin-stat-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #94a3b8;
+    margin-bottom: 8px;
+}
+
+.ql-admin-stat-val {
+    font-size: 28px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.1;
+}
+
+.ql-admin-main-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+}
+
+.ql-admin-section-card {
+    background: #11131a;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.ql-admin-sec-title {
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #94a3b8;
+    margin-bottom: 18px;
+}
+
+.ql-admin-activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ql-admin-activity-item {
+    background: #161822;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: border-color 0.15s ease;
+}
+
+.ql-admin-activity-item:hover {
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+.ql-admin-act-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    flex-shrink: 0;
+}
+
+.ql-admin-act-icon.user {
+    background: rgba(124, 58, 237, 0.18);
+    color: #c084fc;
+}
+
+.ql-admin-act-icon.quiz {
+    background: rgba(6, 182, 212, 0.18);
+    color: #38bdf8;
+}
+
+.ql-admin-act-content {
+    flex: 1;
+}
+
+.ql-admin-act-text {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #f1f5f9;
+    margin-bottom: 3px;
+}
+
+.ql-admin-act-sub {
+    font-size: 12px;
+    color: #64748b;
+}
+
+.ql-admin-act-sub .score-good {
+    color: #10b981;
+    font-weight: 600;
+}
+
+.ql-admin-act-time {
+    font-size: 12px;
+    color: #64748b;
+    white-space: nowrap;
+}
+
+.ql-admin-actions-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ql-admin-btn-action-primary {
+    background: #7c3aed;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 9px;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.ql-admin-btn-action-primary:hover {
+    background: #6d28d9;
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.4);
+    transform: translateY(-1px);
+    color: #ffffff;
+}
+
+.ql-admin-btn-action-secondary {
+    background: #161822;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #e2e8f0;
+    font-size: 13.5px;
+    font-weight: 600;
+    border-radius: 9px;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.ql-admin-btn-action-secondary:hover {
+    background: #1c1f2b;
+    border-color: rgba(255, 255, 255, 0.16);
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.ql-admin-note-card {
+    background: #161822;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-top: 14px;
+    font-size: 12.5px;
+    color: #64748b;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+/* Add Quiz Form Styles */
+.ql-admin-form-box {
+    background: #11131a;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.ql-admin-box-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #94a3b8;
+    margin-bottom: 16px;
+}
+
+.ql-admin-quiz-meta-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 80px 80px;
+    gap: 16px;
+}
+
+.ql-admin-field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.ql-admin-field-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #64748b;
+}
+
+.ql-admin-input, .ql-admin-select, .ql-admin-textarea {
+    background: #161822;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 10px 14px;
+    color: #ffffff;
+    font-size: 13.5px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.ql-admin-input:focus, .ql-admin-select:focus, .ql-admin-textarea:focus {
+    border-color: #7c3aed;
+}
+
+.ql-admin-q-card {
+    background: #11131a;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.ql-admin-options-grid-2x2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+
+.ql-admin-add-q-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #a78bfa;
+    font-size: 13.5px;
+    font-weight: 600;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 0.15s ease;
+}
+
+.ql-admin-add-q-trigger:hover {
+    color: #ffffff;
+    background: rgba(124, 58, 237, 0.15);
+}
+
+.ql-admin-form-bottom-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 28px;
+}
+
+/* Student Results Table */
+.ql-admin-table-wrap {
+    background: #11131a;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.ql-admin-table-row-head {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr 1fr 1fr;
+    padding: 14px 24px;
+    background: #0d0f14;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #64748b;
+}
+
+.ql-admin-table-row {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    padding: 16px 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    font-size: 13.5px;
+    color: #cbd5e1;
+    transition: background 0.15s ease;
+}
+
+.ql-admin-table-row:last-child {
+    border-bottom: none;
+}
+
+.ql-admin-table-row:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.ql-admin-student-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.ql-admin-student-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.ql-admin-status-completed {
+    background: rgba(16, 185, 129, 0.12);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.ql-admin-view-details-link {
+    color: #a78bfa;
+    font-size: 12.5px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    transition: color 0.15s ease;
+}
+
+.ql-admin-view-details-link:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.ql-admin-table-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    font-size: 12.5px;
+    color: #64748b;
+}
+
+.ql-admin-pagination-btns {
+    display: flex;
+    gap: 6px;
+}
+
+.ql-admin-page-btn {
+    background: #161822;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #94a3b8;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.ql-admin-page-btn:hover {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.ql-admin-page-btn.active {
+    background: #7c3aed;
+    color: #ffffff;
+    border-color: #7c3aed;
+}
+
+/* Modal Popup */
+.ql-modal-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(6px);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.ql-modal-backdrop.open {
+    display: flex;
+}
+
+.ql-modal-box {
+    background: #11131a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    max-width: 580px;
+    width: 100%;
+    padding: 28px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    position: relative;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.ql-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: #64748b;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.15s ease;
+}
+
+.ql-modal-close:hover {
+    color: #ffffff;
+}
+
+@media (max-width: 1024px) {
+    .ql-admin-stat-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ql-admin-main-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ql-admin-quiz-meta-row {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .ql-admin-table-row-head, .ql-admin-table-row {
+        grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr;
+    }
+}
+
+/* ==========================================================================
+   Profile Page Styles
+   ========================================================================== */
+.ql-profile-wrap {
+    max-width: 100%;
+    margin: 0;
+    width: 100%;
+}
+
+.ql-profile-header-card {
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.16) 0%, rgba(15, 18, 30, 0.98) 100%);
+    border: 1px solid rgba(139, 92, 246, 0.28);
+    border-radius: 18px;
+    padding: 32px 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 28px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+    position: relative;
+    overflow: hidden;
+}
+
+.ql-profile-header-card::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 220px;
+    height: 220px;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.22) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.ql-profile-user-left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.ql-profile-avatar-large {
+    width: 86px;
+    height: 86px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: 800;
+    color: #ffffff;
+    box-shadow: 0 8px 24px rgba(124, 58, 237, 0.45);
+    border: 2px solid rgba(255, 255, 255, 0.16);
+    flex-shrink: 0;
+}
+
+.ql-profile-title-name {
+    font-size: 28px;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 6px 0;
+    letter-spacing: -0.02em;
+}
+
+.ql-profile-email {
+    color: #94a3b8;
+    font-size: 14px;
+    margin: 0 0 12px 0;
+}
+
+.ql-profile-pill-tags {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.ql-profile-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.ql-profile-badge-pro {
+    background: rgba(124, 58, 237, 0.2);
+    border: 1px solid rgba(139, 92, 246, 0.35);
+    color: #c084fc;
+}
+
+.ql-profile-badge-verified {
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: #34d399;
+}
+
+.ql-profile-badge-active {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #e2e8f0;
+}
+
+.ql-profile-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.ql-btn-edit-profile {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+    border: 1px solid rgba(167, 139, 250, 0.4);
+    color: #ffffff;
+    font-size: 13.5px;
+    font-weight: 600;
+    padding: 10px 22px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35);
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.ql-btn-edit-profile:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.5);
+    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+}
+
+.ql-btn-settings-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #cbd5e1;
+    font-size: 13.5px;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.ql-btn-settings-link:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(139, 92, 246, 0.35);
+    color: #ffffff;
+}
+
+/* Profile 4-Stat Cards Grid */
+.ql-profile-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 28px;
+}
+
+.ql-profile-stat-card {
+    background: #0f121e;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 22px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 140px;
+    transition: all 0.25s ease;
+    box-sizing: border-box;
+}
+
+.ql-profile-stat-card:hover {
+    border-color: rgba(139, 92, 246, 0.35);
+    transform: translateY(-2px);
+    background: #121626;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.ql-profile-stat-card .ql-stat-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.ql-profile-stat-card .ql-stat-label {
+    font-size: 13px;
+    color: #94a3b8;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+.ql-profile-stat-card .ql-stat-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+
+.ql-profile-stat-card:hover .ql-stat-icon {
+    transform: scale(1.06);
+}
+
+.ql-profile-stat-card .ql-stat-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.ql-profile-stat-card .ql-stat-icon.purple {
+    background: rgba(124, 58, 237, 0.16);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    color: #c084fc;
+}
+
+.ql-profile-stat-card .ql-stat-icon.green {
+    background: rgba(16, 185, 129, 0.16);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: #34d399;
+}
+
+.ql-profile-stat-card .ql-stat-icon.blue {
+    background: rgba(14, 165, 233, 0.16);
+    border: 1px solid rgba(14, 165, 233, 0.3);
+    color: #38bdf8;
+}
+
+.ql-profile-stat-card .ql-stat-icon.amber {
+    background: rgba(245, 158, 11, 0.16);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    color: #fbbf24;
+}
+
+.ql-profile-stat-card .ql-stat-value {
+    font-size: 32px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+}
+
+.ql-profile-stat-card .ql-stat-trend {
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.ql-profile-stat-card .ql-stat-trend.positive {
+    color: #34d399;
+}
+
+.ql-profile-stat-card .ql-stat-trend.neutral {
+    color: #94a3b8;
+}
+
+/* Two-column Profile Grid */
+.ql-profile-grid-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 28px;
+    align-items: start;
+}
+
+.ql-profile-card {
+    background: #0f121e;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 26px 28px;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+}
+
+.ql-profile-card:hover {
+    border-color: rgba(139, 92, 246, 0.25);
+}
+
+.ql-profile-card-title {
+    font-size: 16.5px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.ql-card-title-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.ql-card-title-icon svg {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.ql-card-title-icon.purple {
+    background: rgba(124, 58, 237, 0.16);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    color: #c084fc;
+}
+
+.ql-card-title-icon.blue {
+    background: rgba(14, 165, 233, 0.16);
+    border: 1px solid rgba(14, 165, 233, 0.3);
+    color: #38bdf8;
+}
+
+.ql-card-title-icon.green {
+    background: rgba(16, 185, 129, 0.16);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: #34d399;
+}
+
+.ql-card-title-icon.amber {
+    background: rgba(245, 158, 11, 0.16);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    color: #fbbf24;
+}
+
+.ql-profile-data-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.ql-profile-data-row:last-child {
+    border-bottom: none;
+}
+
+.ql-profile-data-label {
+    color: #94a3b8;
+    font-size: 13.5px;
+    font-weight: 500;
+}
+
+.ql-profile-data-val {
+    color: #f1f5f9;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.ql-profile-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: #34d399;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 9999px;
+}
+
+.ql-profile-status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #34d399;
+    box-shadow: 0 0 8px rgba(52, 211, 153, 0.6);
+}
+
+.ql-profile-track-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    background: rgba(124, 58, 237, 0.14);
+    border: 1px solid rgba(139, 92, 246, 0.28);
+    color: #c084fc;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.ql-profile-track-chip:hover {
+    background: rgba(124, 58, 237, 0.24);
+    border-color: rgba(139, 92, 246, 0.45);
+    transform: translateY(-1px);
+}
+
+.ql-profile-badge-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 12px 16px;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+
+.ql-profile-badge-item:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(139, 92, 246, 0.25);
+    transform: translateX(2px);
+}
+
+.ql-profile-badge-emoji {
+    font-size: 24px;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Settings Page Styles
+   ========================================================================== */
+.ql-settings-wrap {
+    max-width: 1040px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.ql-settings-card {
+    background: #0f121e;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 14px;
+    padding: 26px 28px;
+    margin-bottom: 22px;
+}
+
+.ql-settings-sec-head {
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.ql-settings-sec-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 4px 0;
+}
+
+.ql-settings-sec-desc {
+    color: #94a3b8;
+    font-size: 13px;
+    margin: 0;
+}
+
+.ql-settings-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    gap: 20px;
+}
+
+.ql-settings-item:last-child {
+    border-bottom: none;
+}
+
+.ql-settings-item-info {
+    flex: 1;
+}
+
+.ql-settings-item-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #f1f5f9;
+    margin: 0 0 3px 0;
+}
+
+.ql-settings-item-desc {
+    font-size: 12.5px;
+    color: #64748b;
+    margin: 0;
+}
+
+/* Toggle Switch */
+.ql-toggle {
+    position: relative;
+    display: inline-block;
+    width: 46px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.ql-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.ql-toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #1e2438;
+    transition: 0.25s;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ql-toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 2px;
+    bottom: 2px;
+    background-color: #cbd5e1;
+    transition: 0.25s;
+    border-radius: 50%;
+}
+
+.ql-toggle input:checked + .ql-toggle-slider {
+    background-color: #7c3aed;
+    border-color: #8b5cf6;
+}
+
+.ql-toggle input:checked + .ql-toggle-slider:before {
+    transform: translateX(22px);
+    background-color: #ffffff;
+}
+
+.ql-settings-input-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.ql-settings-field-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.ql-settings-field-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.ql-settings-text-input {
+    background: #141724;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 10px 14px;
+    color: #ffffff;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.ql-settings-text-input:focus {
+    border-color: #7c3aed;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.18);
+}
+
+@media (max-width: 1200px) {
+    .ql-profile-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .ql-profile-grid-2col {
+        grid-template-columns: 1fr;
+    }
+
+    .ql-profile-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ql-profile-header-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .ql-profile-actions {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
+
+
+

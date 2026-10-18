@@ -1,0 +1,1962 @@
+/* ==========================================================================
+   QuizLearn Design System & Theme Styles
+   Aesthetic: Sleek Dark Mode with Refined Purple Accents & High Visual Polish
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+    /* Color Palette */
+    --bg-primary: #07080d;
+    --bg-surface: #0e1017;
+    --bg-card: #121520;
+    --bg-card-hover: #171b29;
+    --bg-elevated: #1a1e2d;
+    
+    /* Accents */
+    --accent-purple: #7c3aed;
+    --accent-purple-hover: #6d28d9;
+    --accent-purple-light: #9333ea;
+    --accent-purple-glow: rgba(124, 58, 237, 0.25);
+    --accent-purple-subtle: rgba(124, 58, 237, 0.12);
+    --accent-purple-border: rgba(139, 92, 246, 0.35);
+
+    /* Feedback Colors */
+    --color-success: #10b981;
+    --color-success-bg: rgba(16, 185, 129, 0.12);
+    --color-success-border: #059669;
+    --color-danger: #ef4444;
+    --color-danger-bg: rgba(239, 68, 68, 0.12);
+    --color-danger-border: #dc2626;
+
+    /* Text Colors */
+    --text-primary: #ffffff;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --text-faint: #475569;
+
+    /* Borders */
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-card: rgba(255, 255, 255, 0.07);
+    --border-highlight: rgba(139, 92, 246, 0.3);
+
+    /* Radii */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-full: 9999px;
+
+    /* Shadows & Transitions */
+    --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+    --shadow-glow: 0 0 40px -10px rgba(124, 58, 237, 0.35);
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Resets */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+/* Background Ambient Glows */
+.bg-ambient-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.bg-ambient-layer::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, rgba(9, 10, 15, 0) 70%);
+    filter: blur(80px);
+}
+
+.bg-ambient-layer::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -150px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, rgba(9, 10, 15, 0) 70%);
+    filter: blur(90px);
+}
+
+/* Layout Utilities */
+.ql-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.ql-section {
+    padding: 90px 0;
+    position: relative;
+}
+
+/* Typography Elements */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    margin-top: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+/* Small Section Tag / Pill */
+.ql-badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: var(--radius-full);
+    background: var(--accent-purple-subtle);
+    border: 1px solid var(--accent-purple-border);
+    color: #c4b5fd;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.ql-badge-pill .sparkle-icon {
+    display: inline-block;
+    color: #f59e0b;
+}
+
+/* Section Header Structure */
+.ql-section-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 56px auto;
+}
+
+.ql-section-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    font-weight: 800;
+}
+
+.ql-section-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Buttons */
+.ql-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 24px;
+    border-radius: var(--radius-full);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-normal);
+    border: 1px solid transparent;
+    text-decoration: none;
+}
+
+.ql-btn-primary {
+    background-color: var(--accent-purple);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.3);
+}
+
+.ql-btn-primary:hover {
+    background-color: var(--accent-purple-hover);
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.45);
+}
+
+.ql-btn-secondary {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--text-primary);
+}
+
+.ql-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.09);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+}
+
+.ql-btn-sm {
+    padding: 8px 18px;
+    font-size: 0.88rem;
+}
+
+.ql-btn-block {
+    width: 100%;
+}
+
+/* ==========================================================================
+   Navigation Bar
+   ========================================================================== */
+.ql-navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(7, 8, 13, 0.85);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border-subtle);
+    transition: var(--transition-normal);
+}
+
+.ql-navbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+}
+
+.ql-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+}
+
+.ql-brand-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #8b5cf6, #6366f1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(124, 58, 237, 0.4);
+}
+
+.ql-brand-icon svg {
+    width: 18px;
+    height: 18px;
+    fill: #ffffff;
+}
+
+.ql-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.ql-nav-links a {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.ql-nav-links a:hover {
+    color: var(--text-primary);
+}
+
+.ql-nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Mobile Toggle */
+.ql-nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    color: var(--text-primary);
+}
+
+.ql-nav-toggle svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.ql-hero {
+    padding: 80px 0 60px 0;
+    text-align: center;
+}
+
+.ql-hero-content {
+    max-width: 820px;
+    margin: 0 auto 50px auto;
+}
+
+.ql-hero-title {
+    font-size: 3.75rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 24px;
+}
+
+.ql-hero-desc {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    max-width: 680px;
+    margin: 0 auto 36px auto;
+}
+
+.ql-hero-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   Interactive Quiz Preview Window
+   ========================================================================== */
+.ql-quiz-showcase {
+    max-width: 980px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 50px -10px var(--accent-purple-glow);
+    overflow: hidden;
+    transition: var(--transition-normal);
+}
+
+.ql-quiz-showcase.pulse-highlight {
+    animation: quizGlowPulse 1.2s ease-in-out;
+}
+
+@keyframes quizGlowPulse {
+    0% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.7); }
+    50% { box-shadow: 0 0 50px 10px rgba(124, 58, 237, 0.5); }
+    100% { box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8); }
+}
+
+.ql-window-header {
+    background: rgba(14, 16, 23, 0.95);
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ql-window-dots {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ql-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+}
+
+.ql-dot-red { background-color: #ef4444; }
+.ql-dot-yellow { background-color: #f59e0b; }
+.ql-dot-green { background-color: #10b981; }
+
+.ql-window-title {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.ql-window-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.ql-btn-window-reset {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    padding: 4px 10px;
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.ql-btn-window-reset:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+/* Quiz Interface Layout */
+.ql-quiz-body {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    min-height: 400px;
+}
+
+/* Left Sidebar */
+.ql-quiz-sidebar {
+    background: rgba(10, 11, 17, 0.7);
+    border-right: 1px solid var(--border-subtle);
+    padding: 24px 18px;
+}
+
+.ql-sidebar-heading {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    padding-left: 8px;
+}
+
+.ql-sidebar-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.ql-sidebar-item {
+    padding: 10px 12px;
+    border-radius: var(--radius-sm);
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ql-sidebar-item:hover {
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-primary);
+}
+
+.ql-sidebar-item.active {
+    background: var(--accent-purple-subtle);
+    color: #c4b5fd;
+    font-weight: 600;
+    border-left: 3px solid var(--accent-purple);
+}
+
+/* Quiz Main Panel */
+.ql-quiz-main {
+    padding: 32px 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ql-quiz-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.ql-quiz-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent-purple-light);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.ql-quiz-timer {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.ql-quiz-question {
+    font-size: 1.18rem;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--text-primary);
+    margin-bottom: 24px;
+}
+
+/* Quiz Options List */
+.ql-options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.ql-option-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    user-select: none;
+}
+
+.ql-option-item:hover:not(.state-correct):not(.state-incorrect) {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+.ql-option-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.ql-option-indicator {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    transition: var(--transition-fast);
+    flex-shrink: 0;
+}
+
+/* Correct Answer State */
+.ql-option-item.state-correct {
+    background: var(--color-success-bg);
+    border-color: var(--color-success-border);
+    color: #6ee7b7;
+}
+
+.ql-option-item.state-correct .ql-option-indicator {
+    background: var(--color-success);
+    border-color: var(--color-success);
+    color: #ffffff;
+}
+
+/* Incorrect Answer State */
+.ql-option-item.state-incorrect {
+    background: var(--color-danger-bg);
+    border-color: var(--color-danger-border);
+    color: #fca5a5;
+}
+
+.ql-option-item.state-incorrect .ql-option-indicator {
+    background: var(--color-danger);
+    border-color: var(--color-danger);
+    color: #ffffff;
+}
+
+.ql-option-icon {
+    display: flex;
+    align-items: center;
+}
+
+/* Feedback Explanation Box */
+.ql-quiz-feedback {
+    margin-top: 10px;
+    padding: 14px 18px;
+    border-radius: var(--radius-sm);
+    background: rgba(14, 16, 23, 0.9);
+    border-left: 3px solid var(--accent-purple);
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.ql-quiz-feedback strong {
+    color: var(--text-primary);
+}
+
+/* ==========================================================================
+   Trusted Institutions Strip
+   ========================================================================== */
+.ql-institutions {
+    padding: 60px 0 70px 0;
+    border-bottom: 1px solid var(--border-subtle);
+    text-align: center;
+}
+
+.ql-institutions-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+}
+
+.ql-institutions-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+    flex-wrap: wrap;
+}
+
+.ql-institution-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    opacity: 0.65;
+    transition: var(--transition-fast);
+}
+
+.ql-institution-item:hover {
+    opacity: 1;
+    color: var(--text-primary);
+}
+
+.ql-institution-crest {
+    width: 24px;
+    height: 24px;
+    opacity: 0.75;
+}
+
+/* ==========================================================================
+   Features Section (4 Cards)
+   ========================================================================== */
+.ql-features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.ql-feature-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-lg);
+    padding: 32px 24px;
+    transition: var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.ql-feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent-purple), transparent);
+    opacity: 0;
+    transition: var(--transition-fast);
+}
+
+.ql-feature-card:hover {
+    transform: translateY(-4px);
+    background: var(--bg-card-hover);
+    border-color: rgba(139, 92, 246, 0.3);
+    box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.5);
+}
+
+.ql-feature-card:hover::before {
+    opacity: 1;
+}
+
+.ql-feature-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    background: var(--accent-purple-subtle);
+    border: 1px solid var(--accent-purple-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c4b5fd;
+    margin-bottom: 22px;
+}
+
+.ql-feature-icon svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+}
+
+.ql-feature-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.ql-feature-desc {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ==========================================================================
+   How It Works Section (3 Cards with UI Mockup Illustrations)
+   ========================================================================== */
+.ql-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.ql-step-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-normal);
+}
+
+.ql-step-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(139, 92, 246, 0.3);
+    box-shadow: 0 18px 40px -12px rgba(0, 0, 0, 0.6);
+}
+
+.ql-step-preview {
+    background: rgba(10, 12, 19, 0.9);
+    border-bottom: 1px solid var(--border-subtle);
+    height: 190px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+
+.ql-step-content {
+    padding: 28px 24px;
+    flex-grow: 1;
+}
+
+.ql-step-number {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: var(--accent-purple-light);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.ql-step-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.ql-step-desc {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Step Mockup Visuals */
+.mockup-dashboard {
+    width: 100%;
+    height: 100%;
+    background: #090a10;
+    border-radius: 8px;
+    border: 1px solid var(--border-subtle);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.mockup-header-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mockup-line-sm {
+    height: 6px;
+    width: 60px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+.mockup-tiles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 6px;
+}
+
+.mockup-tile {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-subtle);
+    border-radius: 6px;
+    padding: 10px 8px;
+    text-align: center;
+}
+
+.mockup-tile-icon {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    margin: 0 auto 6px auto;
+}
+
+.mockup-tile-1 .mockup-tile-icon { background: #8b5cf6; }
+.mockup-tile-2 .mockup-tile-icon { background: #3b82f6; }
+.mockup-tile-3 .mockup-tile-icon { background: #10b981; }
+
+.mockup-adaptive-flow {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.mockup-pill-flow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.flow-node {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-family: 'JetBrains Mono', monospace;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+}
+
+.flow-node.active-flow {
+    background: var(--accent-purple-subtle);
+    border-color: var(--accent-purple-border);
+    color: #c4b5fd;
+    font-weight: 600;
+}
+
+.flow-arrow {
+    color: var(--text-muted);
+    font-size: 0.7rem;
+}
+
+/* Analytics Mockup Chart */
+.mockup-charts-grid {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 110px;
+    padding: 0 10px;
+}
+
+.chart-bar-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    width: 18px;
+}
+
+.chart-bar {
+    width: 100%;
+    border-radius: 4px 4px 0 0;
+    background: rgba(255, 255, 255, 0.1);
+    transition: height 0.5s ease;
+}
+
+.chart-bar.highlight {
+    background: linear-gradient(180deg, #8b5cf6, #6366f1);
+}
+
+/* ==========================================================================
+   AI Assistant Section
+   ========================================================================== */
+.ql-ai-section {
+    background: linear-gradient(180deg, transparent, rgba(124, 58, 237, 0.04), transparent);
+}
+
+.ql-ai-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 56px;
+    align-items: center;
+}
+
+.ql-ai-text {
+    max-width: 520px;
+}
+
+.ql-checklist {
+    list-style: none;
+    margin: 28px 0 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.ql-checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 0.98rem;
+    color: var(--text-secondary);
+}
+
+.ql-check-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--accent-purple-subtle);
+    border: 1px solid var(--accent-purple-border);
+    color: #c4b5fd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.ql-check-icon svg {
+    width: 12px;
+    height: 12px;
+    fill: currentColor;
+}
+
+/* AI Chat Window Mockup */
+.ql-ai-chat-window {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+}
+
+.ql-chat-header {
+    background: rgba(14, 16, 23, 0.95);
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ql-chat-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.ql-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #10b981;
+    box-shadow: 0 0 8px #10b981;
+}
+
+.ql-chat-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.ql-msg {
+    display: flex;
+    flex-direction: column;
+    max-width: 88%;
+}
+
+.ql-msg-user {
+    align-self: flex-end;
+}
+
+.ql-msg-bubble-user {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px 16px 4px 16px;
+    padding: 14px 18px;
+    font-size: 0.92rem;
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+.ql-msg-ai {
+    align-self: flex-start;
+}
+
+.ql-msg-bubble-ai {
+    background: var(--accent-purple-subtle);
+    border: 1px solid var(--accent-purple-border);
+    border-radius: 16px 16px 16px 4px;
+    padding: 16px 18px;
+    font-size: 0.92rem;
+    color: #e2e8f0;
+    line-height: 1.6;
+}
+
+.ql-msg-bubble-ai strong {
+    color: #ffffff;
+}
+
+.ql-chat-footer {
+    padding: 14px 20px;
+    background: rgba(14, 16, 23, 0.7);
+    border-top: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ql-chat-input-fake {
+    flex-grow: 1;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-full);
+    padding: 9px 16px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.ql-chat-send-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--accent-purple);
+    border: none;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.ql-chat-send-btn svg {
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+}
+
+/* ==========================================================================
+   Statistics Section
+   ========================================================================== */
+.ql-stats-bar {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-xl);
+    padding: 48px 32px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    text-align: center;
+}
+
+.ql-stat-item {
+    position: relative;
+}
+
+.ql-stat-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 20%;
+    height: 60%;
+    width: 1px;
+    background: var(--border-subtle);
+}
+
+.ql-stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.1;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+}
+
+.ql-stat-label {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   Testimonials Section (3 Cards)
+   ========================================================================== */
+.ql-testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.ql-testimonial-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-lg);
+    padding: 32px 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: var(--transition-normal);
+}
+
+.ql-testimonial-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(139, 92, 246, 0.3);
+    box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.5);
+}
+
+.ql-stars {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #f59e0b;
+    margin-bottom: 18px;
+}
+
+.ql-testimonial-quote {
+    font-size: 0.98rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0 0 24px 0;
+    font-style: italic;
+}
+
+.ql-author-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.ql-author-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #7c3aed, #4f46e5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #ffffff;
+    flex-shrink: 0;
+}
+
+.ql-author-name {
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 2px;
+}
+
+.ql-author-role {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Pricing Section (3 Cards)
+   ========================================================================== */
+.ql-pricing-toggle-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 26px auto 38px auto;
+}
+
+.ql-pricing-toggle-pill {
+    display: inline-flex;
+    align-items: center;
+    background: #0f1322;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 9999px;
+    padding: 5px;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.ql-plan-tab-btn {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 9px 22px;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ql-plan-tab-btn:hover {
+    color: #ffffff;
+}
+
+.ql-plan-tab-btn.active {
+    background: linear-gradient(135deg, #7c3aed 0%, #6366f1 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.4);
+}
+
+.ql-save-badge {
+    background: rgba(16, 185, 129, 0.2);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.ql-pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    align-items: stretch;
+}
+
+.ql-pricing-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-xl);
+    padding: 38px 30px;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-normal);
+    position: relative;
+}
+
+.ql-pricing-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 45px -12px rgba(0, 0, 0, 0.6);
+}
+
+/* Highlighted Student Pro Plan */
+.ql-pricing-card.highlighted {
+    background: #141724;
+    border-color: var(--accent-purple);
+    box-shadow: 0 10px 40px -10px var(--accent-purple-glow);
+}
+
+.ql-pricing-badge {
+    position: absolute;
+    top: -14px;
+    right: 24px;
+    background: var(--accent-purple);
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+}
+
+.ql-pricing-tier {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.ql-pricing-desc {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    margin: 0 0 24px 0;
+    min-height: 42px;
+}
+
+.ql-pricing-cost {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    margin-bottom: 28px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.ql-price-val {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1;
+}
+
+.ql-price-period {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.ql-pricing-features {
+    list-style: none;
+    margin: 0 0 32px 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex-grow: 1;
+}
+
+.ql-pricing-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.ql-pricing-feature-item svg {
+    width: 16px;
+    height: 16px;
+    fill: #10b981;
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Final Call To Action (Banner)
+   ========================================================================== */
+.ql-final-cta {
+    padding: 80px 0 110px 0;
+}
+
+.ql-cta-card {
+    background: radial-gradient(circle at center, rgba(124, 58, 237, 0.16) 0%, rgba(18, 21, 32, 0.95) 70%);
+    border: 1px solid var(--accent-purple-border);
+    border-radius: var(--radius-xl);
+    padding: 64px 32px;
+    text-align: center;
+    box-shadow: 0 20px 60px -15px var(--accent-purple-glow);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.ql-cta-title {
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+}
+
+.ql-cta-desc {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    max-width: 580px;
+    margin: 0 auto 32px auto;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.ql-footer {
+    background: #050609;
+    border-top: 1px solid var(--border-subtle);
+    padding: 70px 0 36px 0;
+}
+
+.ql-footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr repeat(3, 1fr);
+    gap: 48px;
+    margin-bottom: 56px;
+}
+
+.ql-footer-brand-col {
+    max-width: 320px;
+}
+
+.ql-footer-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-top: 16px;
+}
+
+.ql-footer-heading {
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    margin-bottom: 18px;
+}
+
+.ql-footer-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ql-footer-links a {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.ql-footer-links a:hover {
+    color: var(--text-primary);
+}
+
+.ql-footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 32px;
+    border-top: 1px solid var(--border-subtle);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.ql-social-links {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.ql-social-links a {
+    color: var(--text-muted);
+    transition: var(--transition-fast);
+}
+
+.ql-social-links a:hover {
+    color: var(--text-primary);
+}
+
+.ql-social-links svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+/* ==========================================================================
+   Secondary Pages Styling (About, Contact)
+   ========================================================================== */
+.ql-page-content {
+    padding: 60px 0 100px 0;
+    min-height: 60vh;
+}
+
+.ql-page-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    box-shadow: var(--shadow-card);
+}
+
+.ql-page-card address {
+    font-style: normal;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.ql-page-card a {
+    color: #c4b5fd;
+}
+
+.ql-page-card a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Interactive Feedback Toast */
+.ql-toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #141724;
+    border: 1px solid var(--accent-purple-border);
+    color: #ffffff;
+    padding: 14px 22px;
+    border-radius: var(--radius-md);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    font-size: 0.92rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: var(--transition-normal);
+    pointer-events: none;
+}
+
+.ql-toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .ql-features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ql-steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ql-ai-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ql-pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+        margin: 0 auto;
+    }
+
+    .ql-footer-top {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .ql-hero-title {
+        font-size: 2.6rem;
+    }
+
+    .ql-section-title {
+        font-size: 2rem;
+    }
+
+    .ql-nav-links, .ql-nav-actions {
+        display: none;
+    }
+
+    .ql-nav-toggle {
+        display: block;
+    }
+
+    .ql-mobile-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 24px;
+        background: var(--bg-surface);
+        border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .ql-quiz-body {
+        grid-template-columns: 1fr;
+    }
+
+    .ql-quiz-sidebar {
+        display: none;
+    }
+
+    .ql-quiz-main {
+        padding: 20px;
+    }
+
+    .ql-features-grid, .ql-steps-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ql-stats-bar {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+    }
+
+    .ql-stat-item:nth-child(2)::after {
+        display: none;
+    }
+
+    .ql-testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ql-footer-top {
+        grid-template-columns: 1fr;
+    }
+
+    .ql-footer-bottom {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+}
+
+/* ==========================================================================
+   Exact Workflow Section (Matches Figma reference: media_1792088816439.png)
+   ========================================================================== */
+.ql-workflow-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: #a855f7;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 12px;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.ql-workflow-title {
+    font-size: 38px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    text-align: center;
+    margin: 0 0 12px 0;
+}
+
+.ql-workflow-subtitle {
+    font-size: 16px;
+    color: #94a3b8;
+    text-align: center;
+    margin: 0 auto 52px auto;
+    max-width: 640px;
+    line-height: 1.5;
+}
+
+.ql-workflow-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.ql-workflow-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.ql-workflow-img-box {
+    width: 100%;
+    height: 200px;
+    background: #090b14;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.ql-workflow-card:hover .ql-workflow-img-box {
+    transform: translateY(-3px);
+    border-color: rgba(168, 85, 247, 0.35);
+}
+
+.ql-workflow-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.ql-workflow-card-body {
+    padding-top: 18px;
+}
+
+.ql-workflow-step-tag {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #a855f7;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.ql-workflow-step-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 10px 0;
+    line-height: 1.3;
+}
+
+.ql-workflow-step-text {
+    font-size: 14px;
+    color: #94a3b8;
+    line-height: 1.55;
+    margin: 0;
+}
+
+/* ==========================================================================
+   Exact Pricing Section (Matches Figma reference: media_1792088827725.png)
+   ========================================================================== */
+.ql-pricing-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: #a855f7;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 12px;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.ql-pricing-main-title {
+    font-size: 38px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    text-align: center;
+    margin: 0 0 12px 0;
+}
+
+.ql-pricing-main-subtitle {
+    font-size: 15px;
+    color: #94a3b8;
+    text-align: center;
+    margin: 0 auto 48px auto;
+    max-width: 620px;
+    line-height: 1.5;
+}
+
+.ql-pricing-grid-v2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    align-items: stretch;
+}
+
+.ql-pricing-card-v2 {
+    background: #090b14;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 34px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    position: relative;
+}
+
+.ql-pricing-card-v2:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.ql-pricing-card-v2.highlighted {
+    background: #0d0f1c;
+    border: 1.5px solid #7c3aed;
+    box-shadow: 0 0 35px rgba(124, 58, 237, 0.22);
+}
+
+.ql-v2-tier-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.ql-v2-tier-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 6px 0;
+}
+
+.ql-v2-popular-badge {
+    background: #7c3aed;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    box-shadow: 0 2px 8px rgba(124, 58, 237, 0.4);
+}
+
+.ql-v2-tier-desc {
+    font-size: 13px;
+    color: #94a3b8;
+    margin: 0 0 22px 0;
+    line-height: 1.45;
+}
+
+.ql-v2-cost-row {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    margin-bottom: 20px;
+}
+
+.ql-v2-price-val {
+    font-size: 44px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    line-height: 1;
+}
+
+.ql-v2-price-sub {
+    font-size: 14px;
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+.ql-v2-placeholder-box {
+    height: 72px;
+    background: #06070e;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    margin-bottom: 24px;
+}
+
+.ql-v2-features-list {
+    list-style: none;
+    margin: 0 0 32px 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex-grow: 1;
+}
+
+.ql-v2-features-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13.5px;
+    color: #cbd5e1;
+}
+
+.ql-v2-features-list li svg {
+    width: 15px;
+    height: 15px;
+    fill: #a855f7;
+    flex-shrink: 0;
+}
+
+.ql-v2-btn-outline {
+    display: block;
+    width: 100%;
+    padding: 12px 18px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 9px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.ql-v2-btn-outline:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.22);
+    color: #ffffff;
+}
+
+.ql-v2-btn-solid {
+    display: block;
+    width: 100%;
+    padding: 12px 18px;
+    background: #7c3aed;
+    border: none;
+    border-radius: 9px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 18px rgba(124, 58, 237, 0.4);
+    box-sizing: border-box;
+}
+
+.ql-v2-btn-solid:hover {
+    background: #6d28d9;
+    color: #ffffff;
+    box-shadow: 0 6px 22px rgba(109, 40, 217, 0.55);
+}
+
+@media (max-width: 992px) {
+    .ql-workflow-grid,
+    .ql-pricing-grid-v2 {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+}
+
