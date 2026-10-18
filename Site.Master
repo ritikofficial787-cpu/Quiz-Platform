@@ -1,0 +1,179 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="website.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - QuizLearn</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="bg-ambient-layer"></div>
+
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <!-- QuizLearn Top Navigation Bar -->
+        <header class="ql-navbar">
+            <div class="ql-container">
+                <div class="ql-navbar-inner">
+                    <!-- Brand Logo -->
+                    <a class="ql-brand" href="<%= ResolveUrl("~/") %>">
+                        <div class="ql-brand-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <span>QuizLearn</span>
+                    </a>
+
+                    <!-- Desktop Navigation Links -->
+                    <ul class="ql-nav-links">
+                        <li><a href="<%= ResolveUrl("~/") %>#features">Features</a></li>
+                        <li><a href="<%= ResolveUrl("~/") %>#how-it-works">How It Works</a></li>
+                        <li><a href="<%= ResolveUrl("~/") %>#pricing">Pricing</a></li>
+                        <li><a href="<%= ResolveUrl("~/About") %>">About</a></li>
+                    </ul>
+
+                    <!-- Navigation Action -->
+                    <div class="ql-nav-actions">
+                        <a href="<%= ResolveUrl("~/Signup.aspx") %>" class="ql-btn ql-btn-primary ql-btn-sm">Get Started</a>
+                    </div>
+
+                    <!-- Mobile Navigation Hamburger -->
+                    <button type="button" class="ql-nav-toggle" id="navbarToggleBtn" aria-label="Toggle navigation">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Drawer Menu -->
+            <div class="ql-mobile-menu" id="mobileNavMenu" style="display: none;">
+                <a href="<%= ResolveUrl("~/") %>#features">Features</a>
+                <a href="<%= ResolveUrl("~/") %>#how-it-works">How It Works</a>
+                <a href="<%= ResolveUrl("~/") %>#pricing">Pricing</a>
+                <a href="<%= ResolveUrl("~/About") %>">About</a>
+                <a href="<%= ResolveUrl("~/Signup.aspx") %>" class="ql-btn ql-btn-primary ql-btn-sm">Get Started</a>
+            </div>
+        </header>
+
+        <!-- Main Body Content Placeholder -->
+        <main id="MainContentArea" class="ql-main-wrapper" role="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </main>
+
+        <!-- QuizLearn Comprehensive Footer -->
+        <footer class="ql-footer">
+            <div class="ql-container">
+                <div class="ql-footer-top">
+                    <!-- Brand Column -->
+                    <div class="ql-footer-brand-col">
+                        <a class="ql-brand" href="<%= ResolveUrl("~/") %>">
+                            <div class="ql-brand-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                </svg>
+                            </div>
+                            <span>QuizLearn</span>
+                        </a>
+                        <p class="ql-footer-desc">
+                            Empowering students worldwide with adaptive diagnostic testing, real-time analytics, and AI-assisted personalized feedback.
+                        </p>
+                    </div>
+
+                    <!-- Column 1: Product -->
+                    <div>
+                        <h4 class="ql-footer-heading">Product</h4>
+                        <ul class="ql-footer-links">
+                            <li><a href="<%= ResolveUrl("~/") %>#features">Features</a></li>
+                            <li><a href="<%= ResolveUrl("~/") %>#how-it-works">How It Works</a></li>
+                            <li><a href="<%= ResolveUrl("~/") %>#pricing">Pricing Plans</a></li>
+                            <li><a href="<%= ResolveUrl("~/") %>#quiz-showcase">Interactive Demo</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 2: Company -->
+                    <div>
+                        <h4 class="ql-footer-heading">Company</h4>
+                        <ul class="ql-footer-links">
+                            <li><a href="<%= ResolveUrl("~/About") %>">About Us</a></li>
+                            <li><a href="<%= ResolveUrl("~/Contact") %>">Contact</a></li>
+                            <li><a href="<%= ResolveUrl("~/About") %>">Careers</a></li>
+                            <li><a href="<%= ResolveUrl("~/About") %>">Academic Partners</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 3: Resources -->
+                    <div>
+                        <h4 class="ql-footer-heading">Resources</h4>
+                            <li><a href="<%= ResolveUrl("~/ExploreQuizzes.aspx") %>">Quiz Practice Bank</a></li>
+                            <li><a href="<%= ResolveUrl("~/") %>#testimonials">Student Stories</a></li>
+                            <li><a href="<%= ResolveUrl("~/") %>#pricing">Student Discount</a></li>
+                            <li><a href="<%= ResolveUrl("~/Contact") %>">Help &amp; Support</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Footer Bottom Row -->
+                <div class="ql-footer-bottom">
+                    <div>
+                        &copy; <%: DateTime.Now.Year %> QuizLearn, Inc. All rights reserved.
+                    </div>
+                    <div class="ql-social-links">
+                        <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1-2 2 2 2 0 0 1 2-2z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Interactive Toast Message Container -->
+        <div id="qlToast" class="ql-toast" role="alert" aria-live="polite"></div>
+    </form>
+
+    <script src="<%= ResolveUrl("~/Scripts/site.js") %>"></script>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/Scripts/bootstrap.js") %>
+    </asp:PlaceHolder>
+</body>
+</html>

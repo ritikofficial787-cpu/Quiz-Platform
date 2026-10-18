@@ -1,0 +1,36 @@
+﻿.vs/
+bin/
+obj/
+packages/
+*.user
+*.suo
+
+## Added standard Visual Studio ignores
+*.rsuser
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+
+# NuGet
+*.nupkg
+**/packages/*
+
+# Visual Studio profiler
+*.psess
+*.vsp
+
+# Others
+*.log
+*.vsix
+_ReSharper*/
+
+# Web files
+node_modules/
+bower_components/
+
+# IIS Express
+/.vs/**/applicationhost.config
+
+.publish
