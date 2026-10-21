@@ -6,9 +6,7 @@
 
 <asp:Content ID="MainContentArea" ContentPlaceHolderID="MainContent" runat="server">
     <div class="ql-auth-wrapper">
-        <!-- =====================================================================
-             Left Promotional Panel (Matching QuizLearn Design)
-             ===================================================================== -->
+       
         <aside class="ql-auth-promo">
             <!-- Brand Logo -->
             <a class="ql-auth-brand" href="<%= ResolveUrl("~/") %>" aria-label="QuizLearn Home">
