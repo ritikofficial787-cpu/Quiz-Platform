@@ -6,9 +6,7 @@
 
 <asp:Content ID="MainContentArea" ContentPlaceHolderID="MainContent" runat="server">
     <div class="ql-auth-wrapper">
-        <!-- =====================================================================
-             Left Promotional Panel (Matching QuizLearn Login Design)
-             ===================================================================== -->
+     
         <aside class="ql-auth-promo">
             <!-- Brand Logo -->
             <a class="ql-auth-brand" href="<%= ResolveUrl("~/") %>" aria-label="QuizLearn Home">
@@ -61,23 +59,22 @@
                         <span class="ql-auth-badge ql-auth-badge-amber">ELITE</span>
                     </div>
 
-                    <!-- Achievement Card 3: Overall Rank -->
-                    <div class="ql-auth-card">
-                        <div class="ql-auth-card-left">
-                            <div class="ql-auth-card-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-                                </svg>
-                            </div>
-                            <div>
-                                <div class="ql-auth-card-title">Top 10% Overall</div>
-                                <div class="ql-auth-card-desc">Compared to other candidates</div>
-                            </div>
-                        </div>
-                        <span class="ql-auth-badge ql-auth-badge-purple">TOP TIER</span>
-                    </div>
+                                   <!-- Submit Button -->
+                <asp:Button ID="btnLogin" runat="server" Text="Log In" CssClass="ql-btn-auth-primary"
+                    ValidationGroup="LoginValidationGroup" OnClick="btnLogin_Click" />
+
+                <!-- Signup Redirect Link -->
+                <div class="ql-auth-switch">
+                    Don't have an account? <a href="<%= ResolveUrl("~/Signup.aspx") %>">Sign up</a>
                 </div>
             </div>
+        </main>
+    </div>
+
+    <!-- Auth Interactivity Script -->
+    <script src="<%= ResolveUrl("~/Scripts/auth.js") %>"></script>
+</asp:Content>
+
 
             <!-- Footer Quote / Attribution -->
             <div class="ql-auth-promo-footer">
@@ -85,9 +82,7 @@
             </div>
         </aside>
 
-        <!-- =====================================================================
-             Right Form Panel (Log In)
-             ===================================================================== -->
+
         <main class="ql-auth-main">
             <div class="ql-auth-form-card">
                 <header class="ql-auth-header">
